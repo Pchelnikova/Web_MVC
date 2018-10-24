@@ -19,6 +19,7 @@ namespace WebApplication_MVC
         }
         public virtual DbSet<Pizza> Pizzas { get; set; }
         public virtual DbSet<Squirrel> Squirrels { get; set; }
+        public virtual DbSet<Order>Orders { get; set; }
 
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

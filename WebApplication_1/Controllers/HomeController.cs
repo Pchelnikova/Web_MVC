@@ -21,9 +21,8 @@ namespace WebApplication_1.Controllers
             return View();
         }
 
-        public ActionResult Order()
+        public ActionResult MakeOrder()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
@@ -53,7 +52,7 @@ namespace WebApplication_1.Controllers
             }
             else
             {
-                //ViewBag("Not CORRECTLY!");
+                ViewBag.Message = "Not CORRECTLY!";
                 return View("_LogIn");
             }
         }
@@ -73,7 +72,7 @@ namespace WebApplication_1.Controllers
             }
             else
             {
-                //ViewBag("Not CORRECTLY!");
+                ViewBag.Message = "This Login is busy. Input more original login, please!";
                 return View("_CreateAcc");
             }
         }

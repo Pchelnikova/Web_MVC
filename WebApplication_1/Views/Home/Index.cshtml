@@ -6,15 +6,15 @@
     <h1>- HUNGRY SQUIRREL -</h1>
     <p class="lead">Best PIZZA for hungry squirrel only!</p>
     <p>
-       
+
 </div>
 <div class="body">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <img src="\Content\pizza-squirrel.jpg" width="300" height="400" />
         </div>
         <div class="col-md-1">
-            @using (Ajax.BeginForm("_LogIn", new AjaxOptions { LoadingElementId = "login_div" }))
+            @using (Ajax.BeginForm("_LogIn", "Home", new AjaxOptions { LoadingElementId = "login_div" }))
             {
                 <button class="btn btn-lg">LOG IN!</button>
             }
@@ -26,10 +26,12 @@
                 <button class="btn btn-lg">CREATE Account!</button>
             }
         </div>
-     </div>  
-        <div class="row">
+    </div>
+    <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-9" id="login_div">
+        </div>
     </div>
 </div>
-    </div>
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
