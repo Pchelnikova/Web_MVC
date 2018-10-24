@@ -1,0 +1,25 @@
+﻿@model WebApplication_MVC.Squirrel
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Label("LOGIN:   ")
+        </div>
+        <div class="col-md-6">
+            @Html.TextBox("login") <br/><br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Label("PASSWORD:")
+        </div>
+        <div class="col-md-6">
+            @Html.TextBox("password") <br /><br />
+        </div>
+    </div>
+    <div class="row">
+        <p><input type="submit" value="LOG IN" /></p>
+    </div>
+        }
+

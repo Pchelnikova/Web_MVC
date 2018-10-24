@@ -25,7 +25,7 @@ namespace WebApplication_MVC
 
             Squirrel Ben = new Squirrel()
             {
-                Name = "Ben",
+                Login = "Ben",
                 Tail_Color = "Red",
                 isAdmin = false
 
@@ -33,14 +33,14 @@ namespace WebApplication_MVC
 
             Squirrel Dolly = new Squirrel()
             {
-                Name = "Ten",
+                Login = "Ten",
                 Tail_Color = "Orange",
                 isAdmin = false
 
             };
             Squirrel Admin = new Squirrel()
             {
-                Name = "Admin",
+                Login = "Admin",
                 Tail_Color = "Black",
                 isAdmin = true
 

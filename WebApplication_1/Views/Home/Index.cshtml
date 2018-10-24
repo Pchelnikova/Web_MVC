@@ -1,17 +1,19 @@
 ﻿@{
-    ViewBag.Title = "HUNGRY";
+    ViewBag.Title = "";
 }
 
 <div class="jumbotron jumbotron-fluid">
     <h1>- HUNGRY SQUIRREL -</h1>
     <p class="lead">Best PIZZA for hungry squirrel only!</p>
     <p>
-    @Html.ActionLink("Make Order", "MakeOrder", "Home");
-    @*<a href="Order" class="btn btn-primary btn-lg">Make ORDER: &raquo;</a></p>*@
+        @Html.ActionLink("LOG IN", "_LogIn", "Home")
+        @*<a href="Order" class="btn btn-primary btn-lg">Make ORDER: &raquo;</a></p>*@
 </div>
 <div class="row">
-   
     <div class="col-md-6">
-        <img src=".\Content\pizza-squirrel.jpg" width="300" height="400" />
+        <img src="\Content\pizza-squirrel.jpg" width="300" height="400" />
     </div>
-</div> 
+    <div class="col-md-6">
+        @Html.Partial("_LogIn");
+    </div>
+</div>
