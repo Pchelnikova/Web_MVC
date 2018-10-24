@@ -1,13 +1,15 @@
-﻿@model WebApplication_MVC.Squirrel
+﻿@using WebApplication_MVC
+@model Squirrel
+    
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Login_Submit", "Home", FormMethod.Get))
 {
     <div class="row">
         <div class="col-md-3">
             @Html.Label("LOGIN:   ")
         </div>
         <div class="col-md-6">
-            @Html.TextBox("login") <br/><br />
+            @Html.TextBoxFor(m=>m.Login)  <br/><br />
         </div>
     </div>
     <div class="row">
@@ -15,11 +17,12 @@
             @Html.Label("PASSWORD:")
         </div>
         <div class="col-md-6">
-            @Html.TextBox("password") <br /><br />
+            @Html.TextBoxFor(m=>m.Password) <br /><br />
         </div>
     </div>
     <div class="row">
         <p><input type="submit" value="LOG IN" /></p>
     </div>
         }
+
 

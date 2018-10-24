@@ -6,45 +6,59 @@ namespace WebApplication_MVC
     {
         protected override void Seed(Model1 context)
         {
-            Pizza Caprissiosa = new Pizza()
+            Pizza Acorn = new Pizza()
             {
                 Name = "Three acorn",
                 Price = 50
             };
+            context.Pizzas.Add(Acorn);
+            context.SaveChanges();
 
-            Pizza Quatro = new Pizza()
+            Pizza QuatroNuts = new Pizza()
             {
-                Name = "Peanits",
+                Name = "QuatroNuts",
                 Price = 70
             };
-            Pizza Diablo = new Pizza()
+            context.Pizzas.Add(QuatroNuts);
+            context.SaveChanges();
+            Pizza Mix = new Pizza()
             {
-                Name = "Nuts",
+                Name = "NutsMix",
                 Price = 100
             };
+            context.Pizzas.Add(Mix);
+            context.SaveChanges();
 
-            Squirrel Ben = new Squirrel()
+            Squirrel Chip = new Squirrel()
             {
-                Login = "Ben",
+                Login = "Chip",
+                Password = "C",
                 Tail_Color = "Red",
                 isAdmin = false
 
             };
-
-            Squirrel Dolly = new Squirrel()
+            context.Squirrels.Add(Chip);
+            context.SaveChanges();
+            Squirrel Deil = new Squirrel()
             {
-                Login = "Ten",
+                Login = "Deil",
+                Password = "D",
                 Tail_Color = "Orange",
                 isAdmin = false
 
             };
+            context.Squirrels.Add(Deil);
+            context.SaveChanges();
             Squirrel Admin = new Squirrel()
             {
                 Login = "Admin",
+                Password = "Admin",
                 Tail_Color = "Black",
                 isAdmin = true
 
             };
+            context.Squirrels.Add(Admin);
+            context.SaveChanges();
         }
     }
 

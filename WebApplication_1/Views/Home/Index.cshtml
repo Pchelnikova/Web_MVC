@@ -6,14 +6,30 @@
     <h1>- HUNGRY SQUIRREL -</h1>
     <p class="lead">Best PIZZA for hungry squirrel only!</p>
     <p>
-        @Html.ActionLink("LOG IN", "_LogIn", "Home")
-        @*<a href="Order" class="btn btn-primary btn-lg">Make ORDER: &raquo;</a></p>*@
+       
 </div>
-<div class="row">
-    <div class="col-md-6">
-        <img src="\Content\pizza-squirrel.jpg" width="300" height="400" />
-    </div>
-    <div class="col-md-6">
-        @Html.Partial("_LogIn");
+<div class="body">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="\Content\pizza-squirrel.jpg" width="300" height="400" />
+        </div>
+        <div class="col-md-1">
+            @using (Ajax.BeginForm("_LogIn", new AjaxOptions { LoadingElementId = "login_div" }))
+            {
+                <button class="btn btn-lg">LOG IN!</button>
+            }
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1">
+            @using (Ajax.BeginForm("_CreateAcc", new AjaxOptions { LoadingElementId = "login_div" }))
+            {
+                <button class="btn btn-lg">CREATE Account!</button>
+            }
+        </div>
+     </div>  
+        <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9" id="login_div">
     </div>
 </div>
+    </div>

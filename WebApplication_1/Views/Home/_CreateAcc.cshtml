@@ -1,0 +1,34 @@
+﻿@using WebApplication_MVC
+@model Squirrel
+
+
+@using (Html.BeginForm("CreateAcc", "Home", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Label(" Input LOGIN:   ")
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.Login)  <br /><br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Label(" Input PASSWORD:")
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.Password) <br /><br />
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Label("Color of y TAIL?")
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.Tail_Color) <br /><br />
+        </div>
+    </div>
+        <div class="row">
+            <p><input type="submit" value="CREATE" /></p>
+        </div>
+        }
