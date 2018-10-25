@@ -2,7 +2,7 @@
 @model Squirrel
     
 
-@using (Html.BeginForm("Login_Submit", "Home", FormMethod.Get))
+@using (Html.BeginForm("Login_Submit", "Home", FormMethod.Post))
 {
     <div class="row">
         <div class="col-md-3">
@@ -24,5 +24,3 @@
         <p><input type="submit" value="LOG IN" /></p>
     </div>
         }
-
-

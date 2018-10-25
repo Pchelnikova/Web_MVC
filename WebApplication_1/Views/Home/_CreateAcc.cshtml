@@ -2,7 +2,7 @@
 @model Squirrel
 
 
-@using (Html.BeginForm("CreateAcc", "Home", FormMethod.Get))
+@using (Html.BeginForm("CreateAcc", "Home", FormMethod.Post))
 {
     <div class="row">
         <div class="col-md-3">
@@ -22,7 +22,7 @@
         </div>
     <div class="row">
         <div class="col-md-3">
-            @Html.Label("Color of y TAIL?")
+            @Html.Label("Color of your TAIL?")
         </div>
         <div class="col-md-6">
             @Html.TextBoxFor(m => m.Tail_Color) <br /><br />

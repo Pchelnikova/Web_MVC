@@ -37,7 +37,7 @@ namespace WebApplication_1.Controllers
             return PartialView();
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult Login_Submit(Squirrel squirrel)
         {
 
@@ -48,7 +48,7 @@ namespace WebApplication_1.Controllers
 
             if((ctx.Squirrels.FirstOrDefault(m=>m.Login == squ.Login)) !=null && ctx.Squirrels.FirstOrDefault(m=>m.Password==squ.Password)!=null)
             {
-                return View("Order");
+                return View("MakeOrder");
             }
             else
             {
@@ -57,7 +57,7 @@ namespace WebApplication_1.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult CreateAcc(Squirrel squirrel)
         {
             Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password, Tail_Color = squirrel.Tail_Color, isAdmin = false };
@@ -68,7 +68,7 @@ namespace WebApplication_1.Controllers
             {
                 ctx.Squirrels.Add(squ);
                 ctx.SaveChanges();
-                return View("Order");
+                return View("MakeOrder");
             }
             else
             {
