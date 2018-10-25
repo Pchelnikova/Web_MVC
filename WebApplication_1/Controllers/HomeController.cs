@@ -40,21 +40,31 @@ namespace WebApplication_1.Controllers
         [HttpPost]
         public ActionResult Login_Submit(Squirrel squirrel)
         {
-
-
-            Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password };
-            
+           
+            Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password };            
             Model1 ctx = new Model1();
-
             if((ctx.Squirrels.FirstOrDefault(m=>m.Login == squ.Login)) !=null && ctx.Squirrels.FirstOrDefault(m=>m.Password==squ.Password)!=null)
             {
+                string password_hash = Md5_Hash(squ.Password);
+                @Response.Cookies["userInfo"]["password"] = password_hash;
+                @Response.Cookies["userInfo"]["login"] = squirrel.Login;
                 return View("MakeOrder");
             }
             else
             {
                 ViewBag.Message = "Not CORRECTLY!";
-                return View("_LogIn");
+                return View("Index");
             }
+        }
+        public string Md5_Hash(string password)
+        {
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+
+            data = x.ComputeHash(data);
+
+            return System.Text.Encoding.ASCII.GetString(data);
         }
 
         [HttpPost]
@@ -66,14 +76,18 @@ namespace WebApplication_1.Controllers
 
             if ((ctx.Squirrels.FirstOrDefault(m => m.Login == squ.Login)) == null)
             {
+                
                 ctx.Squirrels.Add(squ);
                 ctx.SaveChanges();
+                string password_hash =Md5_Hash(squ.Password);
+                @Response.Cookies["userInfo"]["password"] = password_hash;
+                @Response.Cookies["userInfo"]["login"] = squirrel.Login;
                 return View("MakeOrder");
             }
             else
             {
                 ViewBag.Message = "This Login is busy. Input more original login, please!";
-                return View("_CreateAcc");
+                return View("Index");
             }
         }
 
