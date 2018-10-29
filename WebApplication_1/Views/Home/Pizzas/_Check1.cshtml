@@ -1,4 +1,4 @@
-﻿@model WebApplication_MVC.Pizza
+﻿@model WebApplication_MVC.Order
  @using (Html.BeginForm("CheckOrder", "Home", FormMethod.Post))
  {
 
@@ -10,13 +10,13 @@
         @Html.Label("How many?");
     </div>
     <div class="col-md-3">
-        @Html.TextBox("txtbox")
+        @Html.TextBoxFor(m=>m.QuantityPizza.Values.)
     </div>
     <div class="col-md-1">
         <label></label>
     </div>
     <div class="col-md-4">
-        <button class="btn" type="submit">Order!</button>
+        <button class="btn" type="submit" name="order_add">Order!</button>
     </div>
 </div>
  }

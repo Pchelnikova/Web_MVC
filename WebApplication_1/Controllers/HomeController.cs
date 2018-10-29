@@ -9,6 +9,8 @@ namespace WebApplication_1.Controllers
 {
     public class HomeController : Controller
     {
+        Model1 ctx = new Model1();
+
         public ActionResult Index()
         {
             return View();
@@ -23,7 +25,6 @@ namespace WebApplication_1.Controllers
 
         public ActionResult MakeOrder()
         {
-            Model1 ctx = new Model1();
             return View(ctx.Pizzas.ToList());
         }
 
@@ -49,7 +50,6 @@ namespace WebApplication_1.Controllers
         {
            
             Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password };            
-            Model1 ctx = new Model1();
             if((ctx.Squirrels.FirstOrDefault(m=>m.Login == squ.Login)) !=null && ctx.Squirrels.FirstOrDefault(m=>m.Password==squ.Password)!=null)
             {
                 string password_hash = Md5_Hash(squ.Password);
@@ -79,9 +79,6 @@ namespace WebApplication_1.Controllers
         public ActionResult CreateAcc(Squirrel squirrel)
         {
             Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password, Tail_Color = squirrel.Tail_Color, isAdmin = false };
-
-            Model1 ctx = new Model1();
-
             if ((ctx.Squirrels.FirstOrDefault(m => m.Login == squ.Login)) == null)
             {
                 
@@ -99,6 +96,10 @@ namespace WebApplication_1.Controllers
             }
         }
 
-        
+        public ActionResult CreateOrder()
+        {
+            Order order = new Order() { }
+            return View("Index");
+        }
     }
 }
