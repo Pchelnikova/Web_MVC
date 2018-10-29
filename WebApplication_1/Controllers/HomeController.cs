@@ -24,7 +24,7 @@ namespace WebApplication_1.Controllers
         public ActionResult MakeOrder()
         {
             Model1 ctx = new Model1();
-            return View(ctx.Pizzas);
+            return View(ctx.Pizzas.ToList());
         }
 
         public ActionResult _LogIn()

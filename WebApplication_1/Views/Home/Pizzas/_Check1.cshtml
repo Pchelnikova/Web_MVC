@@ -1,17 +1,22 @@
 ﻿@model WebApplication_MVC.Pizza
  @using (Html.BeginForm("CheckOrder", "Home", FormMethod.Post))
  {
-<dib class="row">
-    @Html.Label("PRICE: "+Model.Price.ToString());
 
-</dib>
-     <div class="row">
-         <div class="col-md-6">
-             @Html.CheckBox("chbox", false);
-         </div>
-         <div class="col-md-6">
-             @Html.TextBox("txtbox");;
-         </div>
-         <button class="btn", type="submit">Order!</button>
-     </div>
+<div class="row">
+    <div class="col-md-2">
+        @Html.CheckBox("chbox", false, new { @class = "chekbox" })
+    </div>
+    <div class="col-md-2">
+        @Html.Label("How many?");
+    </div>
+    <div class="col-md-3">
+        @Html.TextBox("txtbox")
+    </div>
+    <div class="col-md-1">
+        <label></label>
+    </div>
+    <div class="col-md-4">
+        <button class="btn" type="submit">Order!</button>
+    </div>
+</div>
  }

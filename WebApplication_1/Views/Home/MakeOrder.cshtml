@@ -11,18 +11,18 @@
 
       </div>
 <div class="body">
-    <div class="well">
+    <div class="well well-sm">
         <h2>PIZZA</h2>
     </div>
     <div class="row">
         <div class="col-md-4">
-            @Html.Partial("Pizzas/_Photo1", Model.Where(m=>m.Name=="Mushrooms"));
+            @Html.Partial("Pizzas/_Photo1", Model.FirstOrDefault(m=>m.Name=="Mushrooms"));
         </div>
         <div class="col-md-4">
             @Html.Partial("Pizzas/_Description1");
         </div>
         <div class="col-md-4">
-            @Html.Partial("Pizzas/_Check1", Model.Where(m => m.Name == "Mushrooms"));
+            @Html.Partial("Pizzas/_Check1", Model.FirstOrDefault(m => m.Name == "Mushrooms"));
         </div>
     </div>
 </div>

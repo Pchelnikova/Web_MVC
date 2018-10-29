@@ -257,6 +257,8 @@ th {
   }
   .label {
     border: 1px solid #000;
+    font-size :xx-large;
+    color : burlywood;
   }
   .table {
     border-collapse: collapse !important;
@@ -2647,6 +2649,7 @@ input[type="search"] {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+ zoom: 0.2;
 }
 .radio label,
 .checkbox label {
