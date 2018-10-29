@@ -32,6 +32,13 @@ namespace WebApplication_1.Controllers
             return PartialView();
         }
 
+        public ActionResult LogOut()
+        {
+            @Response.Cookies["userInfo"]["login"] = null;
+            Response.Cookies["userInfo"]["password"] = null;
+            return View("Index");
+        }
+
         public ActionResult _CreateAcc()
         {
             return PartialView();
@@ -48,6 +55,7 @@ namespace WebApplication_1.Controllers
                 string password_hash = Md5_Hash(squ.Password);
                 @Response.Cookies["userInfo"]["password"] = password_hash;
                 @Response.Cookies["userInfo"]["login"] = squirrel.Login;
+                
                 return View("MakeOrder");
             }
             else
