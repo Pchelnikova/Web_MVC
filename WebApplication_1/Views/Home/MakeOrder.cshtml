@@ -1,9 +1,8 @@
 ﻿@{
     ViewBag.Title = "Order";
 }
-
+@model IEnumerable<WebApplication_MVC.Pizza>    
 <br /><p>
-
 </p>
       <div class="jumbotron jumbotron-fluid">
           <h1>- HUNGRY SQUIRREL -</h1>
@@ -12,22 +11,19 @@
 
       </div>
 <div class="body">
-    <div class=" panel-heading">
+    <div class="well">
         <h2>PIZZA</h2>
     </div>
     <div class="row">
-        <aside class="col-md-4">
-            <ul class="list-group">
-                
-                <li class="list-group-item active">Quatro Nuts</li>
-                <li class="list-group-item"><a href="/donec/">Diablo Oak</a></li>
-                <li class="list-group-item"><a href="/vestibulum">Fruit</a></li>
-            </ul>
-
-        </aside>
-        <section class="col-md-8">
-
-        </section>
+        <div class="col-md-4">
+            @Html.Partial("Pizzas/_Photo1", Model.Where(m=>m.Name=="Mushrooms"));
+        </div>
+        <div class="col-md-4">
+            @Html.Partial("Pizzas/_Description1");
+        </div>
+        <div class="col-md-4">
+            @Html.Partial("Pizzas/_Check1", Model.Where(m => m.Name == "Mushrooms"));
+        </div>
     </div>
 </div>
 

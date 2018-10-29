@@ -23,8 +23,8 @@ namespace WebApplication_1.Controllers
 
         public ActionResult MakeOrder()
         {
-
-            return View();
+            Model1 ctx = new Model1();
+            return View(ctx.Pizzas);
         }
 
         public ActionResult _LogIn()

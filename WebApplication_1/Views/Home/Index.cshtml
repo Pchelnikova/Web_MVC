@@ -17,25 +17,30 @@
             <div class="row">
                 <div class="col-lg-1">
                     @using (Ajax.BeginForm("_LogIn", "Home", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "login_div", HttpMethod = "POST" }))
-                {
-                    <button class="btn btn-lg">LOG IN!</button>
-                }
+                    {
+                        <button class="btn btn-lg">LOG IN!</button>
+                    }
                 </div>
                 <div class="col-lg-3"></div>
                 <div class="col-md-6" id="login_div">
                 </div>
             </div>
-            <div class="row"></div>
-        <div class="row">
-            <div class="col-md-1">
-                @using (Ajax.BeginForm("_CreateAcc", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "login_div", HttpMethod = "POST" }))
-                {
-                    <button class="btn btn-lg">CREATE Account!</button>
-                }
+            <div class="row">
+                <label></label>
             </div>
-        </div>
+            <div class="row">
+                <label></label>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    @using (Ajax.BeginForm("_CreateAcc", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "login_div", HttpMethod = "POST" }))
+                    {
+                        <button class="btn btn-lg">CREATE Account!</button>
+                    }
+                </div>
+            </div>
 
-    </div>
+        </div>
     </div>
     </div>
    

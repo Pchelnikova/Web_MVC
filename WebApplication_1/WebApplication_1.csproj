@@ -222,6 +222,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_LogIn.cshtml" />
     <Content Include="Views\Home\_CreateAcc.cshtml" />
+    <Content Include="Views\Home\Pizzas\_Photo1.cshtml" />
+    <Content Include="Views\Home\Pizzas\_Description1.cshtml" />
+    <Content Include="Views\Home\Pizzas\_Check1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

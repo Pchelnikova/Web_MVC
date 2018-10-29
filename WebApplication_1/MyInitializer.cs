@@ -6,12 +6,12 @@ namespace WebApplication_MVC
     {
         protected override void Seed(Model1 context)
         {
-            Pizza Acorn = new Pizza()
+            Pizza Mushrooms = new Pizza()
             {
-                Name = "Three acorn",
+                Name = "Mushrooms",
                 Price = 50
             };
-            context.Pizzas.Add(Acorn);
+            context.Pizzas.Add(Mushrooms);
             context.SaveChanges();
 
             Pizza QuatroNuts = new Pizza()
@@ -21,12 +21,12 @@ namespace WebApplication_MVC
             };
             context.Pizzas.Add(QuatroNuts);
             context.SaveChanges();
-            Pizza Mix = new Pizza()
+            Pizza Frutti_Di_Mare = new Pizza()
             {
-                Name = "NutsMix",
+                Name = "Frutti Di Mare",
                 Price = 100
             };
-            context.Pizzas.Add(Mix);
+            context.Pizzas.Add(Frutti_Di_Mare);
             context.SaveChanges();
 
             Squirrel Chip = new Squirrel()

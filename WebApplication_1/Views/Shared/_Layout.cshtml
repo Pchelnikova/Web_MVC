@@ -23,6 +23,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("MakeOrder", "MakeOrder", "Home")</li>
                     <li>@Html.ActionLink("Admin", "Admin", "Home")</li>
+                    @if (@Response.Cookies["userInfo"]["login"] != null)
+
+                    {
+                        @Html.ActionLink("LOG OUT", "LogOut", null, new { @class = "btn btn-outline-success my-2 my-sm-0"})
+                        @*<button class="btn btn-outline-success my-2 my-sm-0" type="submit" background-color="gray">LOG OUT</button>*@
+                    }
 
                 </ul>
 
@@ -30,12 +36,7 @@
             </div>
             <div class="navbar-collapse collapse">
 
-                @if (@Response.Cookies["userInfo"]["login"] != null)
-                    
-                {
-                    @Html.ActionLink("LOG OUT", "LogOut",null, new {@class="actionButton" })
-                    @*<button class="btn btn-outline-success my-2 my-sm-0" type="submit" background-color="gray">LOG OUT</button>*@
-                }
+               
                 </div>
             </div>
         </div>
