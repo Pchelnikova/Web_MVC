@@ -1,43 +1,25 @@
 ﻿@model WebApplication_MVC.Pizza
 
 
-@section scripts
-{
-<script>
-    function myFunction() {
-        var quantity = $("box").text
-        var check = $("chbox").value
-        if (check.value == true) {
-
-        }
-
-    }
-</script>
-}
-
-
-@*@using (Html.BeginForm("CheckOrder", "Home", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "result_div", HttpMethod = "POST" }))
-{*@
-
-    <div class="row">
-        <div class="col-md-2">
-            @Html.CheckBox("chbox", false, new { @class = "chekbox" })
-        </div>
-        <div class="col-md-2">
-            @Html.Label("How many?")
-        </div>
-        <div class="col-md-3">
-            @Html.TextBox("box")
-        </div>
-        <div class="col-md-1">
-            <label></label>
-        </div>
-        <div class="col-md-4">
-            @string 
-            <button class="btn" onclick="myFunction()" name="order_add">Order!</button>
-        </div>
+<div class="row">
+    <div class="col-md-2">
+        @Html.CheckBox("chbox", false, new { @class = "chekbox" })
     </div>
-@*}*@
+    <div class="col-md-2">
+        @Html.Label("How many?")
+    </div>
+    <div class="col-md-3">
+        @Html.TextBox("box")
+    </div>
+    <div class="col-md-1">
+        <label></label>
+    </div>
+    <div class="col-md-4">
+        <button data-pizza-name="@Model.Name" class="btn" name="order_add">Order</button>
+    </div>
+</div>
 
-    
+
+
+
 
