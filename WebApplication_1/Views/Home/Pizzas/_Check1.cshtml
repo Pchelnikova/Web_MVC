@@ -1,22 +1,36 @@
-﻿@model WebApplication_MVC.Order
- @using (Html.BeginForm("CheckOrder", "Home", FormMethod.Post))
- {
+﻿@model WebApplication_MVC.Pizza
 
-<div class="row">
-    <div class="col-md-2">
-        @Html.CheckBox("chbox", false, new { @class = "chekbox" })
+<script>
+    function myFunction(name) {
+        $("quantity").text = $("box").text;       
+    }
+</script>
+
+@*@using (Html.BeginForm("CheckOrder", "Home", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "result_div", HttpMethod = "POST" }))
+{*@
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.CheckBox("chbox", false, new { @class = "chekbox" })
+        </div>
+        <div class="col-md-2">
+            @Html.Label("How many?")
+        </div>
+        <div class="col-md-3">
+            @Html.TextBox("box")
+        </div>
+        <div class="col-md-1">
+            <label></label>
+        </div>
+        <div class="col-md-4">
+            <button class="btn" onclick="myFunction(model.name)" name="order_add">Order!</button>
+
+        </div>
     </div>
-    <div class="col-md-2">
-        @Html.Label("How many?");
+@*}*@
+
+    <div id="result_order">
+        <label>@Model.Name</label>
+        <label id="quantity"></label>
     </div>
-    <div class="col-md-3">
-        @Html.TextBoxFor(m=>m.QuantityPizza.Values.)
-    </div>
-    <div class="col-md-1">
-        <label></label>
-    </div>
-    <div class="col-md-4">
-        <button class="btn" type="submit" name="order_add">Order!</button>
-    </div>
-</div>
- }
+

@@ -9,7 +9,6 @@ namespace WebApplication_1.Controllers
 {
     public class HomeController : Controller
     {
-        Model1 ctx = new Model1();
 
         public ActionResult Index()
         {
@@ -25,6 +24,7 @@ namespace WebApplication_1.Controllers
 
         public ActionResult MakeOrder()
         {
+            Model1 ctx = new Model1();
             return View(ctx.Pizzas.ToList());
         }
 
@@ -48,21 +48,25 @@ namespace WebApplication_1.Controllers
         [HttpPost]
         public ActionResult Login_Submit(Squirrel squirrel)
         {
-           
+            Model1 ctx = new Model1();
             Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password };            
             if((ctx.Squirrels.FirstOrDefault(m=>m.Login == squ.Login)) !=null && ctx.Squirrels.FirstOrDefault(m=>m.Password==squ.Password)!=null)
             {
                 string password_hash = Md5_Hash(squ.Password);
                 @Response.Cookies["userInfo"]["password"] = password_hash;
                 @Response.Cookies["userInfo"]["login"] = squirrel.Login;
-                
-                return View("MakeOrder");
+
+                return View("MakeOrder", ctx.Pizzas.ToList());
             }
             else
             {
                 ViewBag.Message = "Not CORRECTLY!";
                 return View("Index");
             }
+        }
+        public string CheckOrder(bool chbox, string box)
+        {            
+            return box;
         }
         public string Md5_Hash(string password)
         {
@@ -78,6 +82,7 @@ namespace WebApplication_1.Controllers
         [HttpPost]
         public ActionResult CreateAcc(Squirrel squirrel)
         {
+            Model1 ctx = new Model1();
             Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password, Tail_Color = squirrel.Tail_Color, isAdmin = false };
             if ((ctx.Squirrels.FirstOrDefault(m => m.Login == squ.Login)) == null)
             {
@@ -98,7 +103,7 @@ namespace WebApplication_1.Controllers
 
         public ActionResult CreateOrder()
         {
-            Order order = new Order() { }
+            Order order = new Order();
             return View("Index");
         }
     }
