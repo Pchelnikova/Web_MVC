@@ -1,13 +1,12 @@
 ﻿@model WebApplication_MVC.Pizza
- @using (Html.BeginForm("CheckOrder", "Home", FormMethod.Post))
- {
+
 
 <div class="row">
     <div class="col-md-2">
         @Html.CheckBox("chbox", false, new { @class = "chekbox" })
     </div>
     <div class="col-md-2">
-        @Html.Label("How many?");
+        @Html.Label("How many?")
     </div>
     <div class="col-md-3">
         @Html.TextBox("box")
@@ -16,7 +15,11 @@
         <label></label>
     </div>
     <div class="col-md-4">
-        <button class="btn" type="submit" name="order_add">Order!</button>
+        <button data-pizza-name="@Model.Name" class="btn" name="order_add">Order</button>
     </div>
 </div>
- }
+
+
+
+
+
