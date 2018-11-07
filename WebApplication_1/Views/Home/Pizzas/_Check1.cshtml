@@ -1,10 +1,20 @@
 ﻿@model WebApplication_MVC.Pizza
 
+
+@section scripts
+{
 <script>
-    function myFunction(name) {
-        $("quantity").text = $("box").text;       
+    function myFunction() {
+        var quantity = $("box").text
+        var check = $("chbox").value
+        if (check.value == true) {
+
+        }
+
     }
 </script>
+}
+
 
 @*@using (Html.BeginForm("CheckOrder", "Home", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "result_div", HttpMethod = "POST" }))
 {*@
@@ -23,14 +33,11 @@
             <label></label>
         </div>
         <div class="col-md-4">
-            <button class="btn" onclick="myFunction(model.name)" name="order_add">Order!</button>
-
+            @string 
+            <button class="btn" onclick="myFunction()" name="order_add">Order!</button>
         </div>
     </div>
 @*}*@
 
-    <div id="result_order">
-        <label>@Model.Name</label>
-        <label id="quantity"></label>
-    </div>
+    
 
