@@ -48,7 +48,9 @@ namespace WebApplication_1.Controllers
         [HttpPost]
         public ActionResult Login_Submit(Squirrel squirrel)
         {
-           
+            Model1 ctx = new Model1();
+
+
             Squirrel squ = new Squirrel() { Login = squirrel.Login, Password = squirrel.Password };            
             if((ctx.Squirrels.FirstOrDefault(m=>m.Login == squ.Login)) !=null && ctx.Squirrels.FirstOrDefault(m=>m.Password==squ.Password)!=null)
             {
@@ -98,7 +100,7 @@ namespace WebApplication_1.Controllers
 
         public ActionResult CreateOrder()
         {
-            Order order = new Order() { }
+           // Order order = new Order() { }
             return View("Index");
         }
     }
