@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Order";
 }
-@model IEnumerable<WebApplication_MVC.Pizza>
+@model WebApplication_1.Models.PizzaHelpModel
 <br /><p>
 </p>
 <div class="jumbotron jumbotron-fluid">
@@ -9,14 +9,14 @@
     <p class="lead">Best PIZZA for hungry squirrel only!</p>
     <p>
 </div>
-<div id="result_order" position="fixed" left="10px" top="80%" padding="10px" border="5px solid #333">
+<div id="result_order" >
     @Html.Partial("Pizzas/_Order")
 </div>
 <div class="body">
     <div class="well well-sm">
         <h2>PIZZA</h2>
     </div>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Pizzas)
     {
         <div class="row">
             <div class="col-md-4">
@@ -41,13 +41,23 @@
     <script>
         $(document).ready(function () {
             $("button").click(function () {
-                let thisChildren = $(this).closest("div[class='row']").children();
-                var quantity = thisChildren.find("input#box").val();
-                console.log(quantity)
-                let isOrder = thisChildren.find("input#chbox").
+                let thisChildren = $(this).closest("div[class='row']").children()
+                var quantity = thisChildren.find("input#box").val()
+                let isOrder = thisChildren.find("input#chbox").prop("checked");
+                let isEmpty = true
 
-                $("#table_order").append('<tr><td>this.attr("data-pizza-name")</td><td>quantity</td></tr>')
-                
+                $('#table_order td').each(function () {                  
+                    console.log(this.innerHTML);                   
+                    if ($("#order_add").attr('data-pizza-name') == this.innerHTML)
+                        isEmpty = false
+                });
+                console.log(isEmpty)
+                console.log(isOrder)
+                console.log($("#order_add").attr('data-pizza-name'));            
+               
+                if (isOrder == true && isEmpty == true) {
+                    $("#table_order").append('<tr><td>' + $(this).attr('data-pizza-name') + '</td><td>' + quantity + '</td></tr >')
+                }
             });
         });
     </script>

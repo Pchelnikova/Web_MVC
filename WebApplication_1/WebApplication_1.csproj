@@ -173,6 +173,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model1.cs" />
+    <Compile Include="Models\PizzaHelpModel.cs" />
     <Compile Include="MyInitializer.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Pizza.cs" />
@@ -229,7 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

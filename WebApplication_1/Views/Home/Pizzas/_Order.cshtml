@@ -1,8 +1,13 @@
-﻿@*@model WebApplication_MVC.Order*@
+﻿@model WebApplication_1.Models.PizzaHelpModel
 
-<table id="table_order">
-    <tr>
-        <td>PIZZA</td>
-        <td>Quantity</td>
-    </tr>
-</table>
+@using (Html.BeginForm("CreateOrder", "Home"))
+{
+    <table id="table_order" style="position:fixed; right: 100px; top:40%; padding:10px; border:3px solid #0ff">
+        <tr>
+            <td>PIZZA</td>
+            <td>Quantity</td>
+        </tr>
+    </table>
+    <p><input type="submit" value="CHECK" /></p>
+}
+

@@ -64,10 +64,7 @@ namespace WebApplication_1.Controllers
                 return View("Index");
             }
         }
-        public string CheckOrder(bool chbox, string box)
-        {            
-            return box;
-        }
+       
         public string Md5_Hash(string password)
         {
             System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
@@ -101,9 +98,14 @@ namespace WebApplication_1.Controllers
             }
         }
 
-        public ActionResult CreateOrder()
+        public ActionResult CreateOrder(Dictionary<string, int> pizzas)
         {
-            Order order = new Order() { };
+            Model1 ctx = new Model1();
+            Order new_order = new Order() {
+                Date = DateTime.Now,
+               // QuantityPizza = new Dictionary<string, int> { { } }
+        };
+
             return View("Index");
         }
     }
