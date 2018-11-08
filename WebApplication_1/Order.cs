@@ -7,7 +7,7 @@ namespace WebApplication_MVC
     {
         public int ID { get; set; }
         public DateTime Date { get; set; }
-        public Dictionary<string, int> QuantityPizza { get; set; }
+        public WebApplication_1.Controllers.Pizka[] QuantityPizza { get; set; }
         public virtual Squirrel Squirrel { get; set; }
 
         //count check out

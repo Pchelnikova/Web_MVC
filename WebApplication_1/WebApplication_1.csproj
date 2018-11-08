@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\Pizka.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,7 +177,7 @@
     <Compile Include="Models\PizzaHelpModel.cs" />
     <Compile Include="MyInitializer.cs" />
     <Compile Include="Order.cs" />
-    <Compile Include="Pizza.cs" />
+    <Compile Include="Models\Pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Squirrel.cs" />
   </ItemGroup>

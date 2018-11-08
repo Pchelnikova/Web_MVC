@@ -1,8 +1,7 @@
-﻿@model WebApplication_1.Models.PizzaHelpModel
-
-@Html.Label(Model.Name.ToUpper())
-<br />
+﻿@model WebApplication_MVC.Pizza
+@Html.LabelFor(item => item.Name)
+    <br />
 @Html.Label("PRICE: " + Model.Price.ToString(), new {@class="label"})
 <br />
-<img src="\Content\mushrooms.png"  alt="Mushroom Pizza" width="300" height="300">
+<img src="\Content\mushrooms.png"  alt="@Model.Name" width="300" height="300">
 

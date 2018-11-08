@@ -10,7 +10,7 @@
     <p>
 </div>
 <div id="result_order" >
-    @Html.Partial("Pizzas/_Order")
+    @Html.Partial("Pizzas/_Order", Model.Order)
 </div>
 <div class="body">
     <div class="well well-sm">
@@ -51,12 +51,10 @@
                     if ($("#order_add").attr('data-pizza-name') == this.innerHTML)
                         isEmpty = false
                 });
-                console.log(isEmpty)
-                console.log(isOrder)
-                console.log($("#order_add").attr('data-pizza-name'));            
-               
+                                
                 if (isOrder == true && isEmpty == true) {
-                    $("#table_order").append('<tr><td>' + $(this).attr('data-pizza-name') + '</td><td>' + quantity + '</td></tr >')
+                    $("#table_order").append('<tr><td>' + $(this).attr('data-pizza-name') +
+                                            '</td><td>' + quantity + '</td></tr >')
                 }
             });
         });

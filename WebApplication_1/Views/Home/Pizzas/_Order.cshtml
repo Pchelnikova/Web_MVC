@@ -1,13 +1,30 @@
-﻿@model WebApplication_1.Models.PizzaHelpModel
+﻿@model WebApplication_MVC.Order
 
 @using (Html.BeginForm("CreateOrder", "Home"))
 {
-    <table id="table_order" style="position:fixed; right: 100px; top:40%; padding:10px; border:3px solid #0ff">
-        <tr>
-            <td>PIZZA</td>
-            <td>Quantity</td>
-        </tr>
-    </table>
-    <p><input type="submit" value="CHECK" /></p>
+<table id="table_order" style="position:fixed;
+                                   right: 100px;
+                                   top:40%;
+                                   padding:10px;
+                                   border:3px solid #0ff">
+    <tr>
+        <th>Quantity</th>
+    </tr>
+    <tr>
+    @foreach (var item in Model.QuantityPizza)
+    {
+
+        <td>@Html.TextBox("PizzaN", item.PizzaN)</td>
+        <td>@Html.TextBox("PizzaQ", item.PizzaQ)</td>
+    }
+
+    </tr>
+</table>
+
+     <p><input type="submit" value="CHECK" style="position:fixed;
+                                              right: 10px; top:40%;
+                                              padding:10px;
+                                              border:3px solid #0ff" /></p>
 }
+
 
