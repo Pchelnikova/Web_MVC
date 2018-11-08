@@ -43,11 +43,10 @@
             $("button").click(function () {
                 let thisChildren = $(this).closest("div[class='row']").children();
                 var quantity = thisChildren.find("input#box").val();
-         
-                let isOrder = thisChildren.find("input#chbox").val();
-                
+                console.log(quantity)
+                let isOrder = thisChildren.find("input#chbox").
 
-                $("table_order").append(`<tr><td> ${$(this).attr("data-pizza-name")}</td><td> ${quantity}</td></tr>`);
+                $("#table_order").append('<tr><td>this.attr("data-pizza-name")</td><td>quantity</td></tr>')
                 
             });
         });

@@ -103,7 +103,7 @@ namespace WebApplication_1.Controllers
 
         public ActionResult CreateOrder()
         {
-            Order order = new Order() { }
+            Order order = new Order() { };
             return View("Index");
         }
     }
